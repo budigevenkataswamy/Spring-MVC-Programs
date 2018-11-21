@@ -1,0 +1,23 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+ "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+
+<beans>
+<!-- controller class name  handler mapping -->
+<!-- handler -->
+<bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"></bean>
+ 
+
+<!-- controller -->
+<bean class="controller.HelloController">
+<property name="viewName" value="success"/> 
+</bean> 
+<!-- view resolver -->
+<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+<property name="prefix" value="/"/>
+<property name="suffix" value=".jsp"/>
+</bean>
+
+
+
+</beans>
