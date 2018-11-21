@@ -1,0 +1,24 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+ "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+<bean id="bds" class="org.apache.tomcat.dbcp.dbcp2.BasicDataSource">
+		<property name="DriverClassName" value="oracle.jdbc.OracleDriver"/> 
+		<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/> 
+		<property name="username" value="venkatdb"/> 
+		<property name="password" value="oracle"/>
+		<property name="maxActive" value="15"/> 
+		<property name="maxIdle" value="5"/> 
+		<property name="maxWait" value="5000"/> 
+</bean>
+
+
+<bean id="dao" class="dao.StudentDaoImplJDBC">
+<property name="ds" ref="ds"/>  
+</bean>
+
+
+<bean id="bo" class="business.StudentBoImpl">
+<property name="dao" ref="dao"/> 
+</bean>
+	
+</beans>
